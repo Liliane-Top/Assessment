@@ -1,8 +1,7 @@
-package nl.top.assessment.servicetests;
+package nl.top.assessment.servicestests;
 
 import nl.top.assessment.model.CsvRecord;
 import nl.top.assessment.repositories.CsvRecordRepository;
-import nl.top.assessment.services.CsvRecordServices;
 import nl.top.assessment.services.CsvRecordServicesImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

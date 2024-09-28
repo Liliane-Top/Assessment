@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Transactional
-@Rollback(false) // Voorkom dat de gegevens worden teruggedraaid na de test
+@Rollback(false)
 public class CsvDataLoaderIntegrationTest {
 
     @Autowired
