@@ -31,7 +31,7 @@ public class CsvDataLoaderIntegrationTest {
         csvDataLoader.loadData();
 
         List<CsvRecord> records = repository.findAll();
-        assertThat(records).isNotEmpty(); // Controleer of er records zijn geladen
+        assertThat(records).isNotEmpty();
 
         assertThat(records).anySatisfy(record -> {
             assertThat(record.getSource()).isEqualTo("ZIB");

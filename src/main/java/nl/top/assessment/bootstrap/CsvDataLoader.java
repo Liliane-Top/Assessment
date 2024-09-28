@@ -39,7 +39,7 @@ public class CsvDataLoader {
             while ((line = reader.readNext()) != null) {
                 if (checkIsHeader(line)) continue;
                 CsvRecord record = parseCsvLine(line);
-//                addIfNotADuplicate(record, records);
+                addIfNotADuplicate(record, records);
             }
             repository.saveAll(records);
         } catch (Exception e) {
@@ -54,13 +54,13 @@ public class CsvDataLoader {
         return false;
     }
 
-//    private void addIfNotADuplicate(CsvRecord record, List<CsvRecord> records) {
-//        if (!repository.existsByCode(record.getCode())) {
-//            records.add(record);
-//        } else {
-//            log.warn("Duplicaat record gevonden voor code: {}", record.getCode());
-//        }
-//    }
+    private void addIfNotADuplicate(CsvRecord record, List<CsvRecord> records) {
+        if (!repository.existsByCode(record.getCode())) {
+            records.add(record);
+        } else {
+            log.warn("Duplicaat record gevonden voor code: {}", record.getCode());
+        }
+    }
 
     private CsvRecord parseCsvLine(String[] line) {
         CsvRecord record = new CsvRecord();
